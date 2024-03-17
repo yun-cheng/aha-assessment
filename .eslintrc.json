@@ -50,7 +50,6 @@
 			}
 		],
 		"no-void": "off",
-
 		"@typescript-eslint/padding-line-between-statements": "off",
 		"@typescript-eslint/prefer-enum-initializers": "off",
 		"@typescript-eslint/prefer-readonly-parameter-types": "off",
@@ -68,7 +67,9 @@
 		"@typescript-eslint/init-declarations": "off",
 		"@typescript-eslint/no-confusing-void-expression": [
 			"error",
-			{ "ignoreArrowShorthand": true }
+			{
+				"ignoreArrowShorthand": true
+			}
 		],
 		"@typescript-eslint/non-nullable-type-assertion-style": "off",
 		"@typescript-eslint/strict-boolean-expressions": "off",
@@ -76,7 +77,6 @@
 		"@typescript-eslint/member-ordering": "off",
 		"@typescript-eslint/prefer-includes": "off",
 		"@typescript-eslint/no-restricted-imports": "off",
-
 		"import/no-deprecated": "error",
 		"import/order": "off",
 		"import/no-extraneous-dependencies": [
@@ -92,7 +92,6 @@
 				]
 			}
 		],
-
 		"react/no-did-update-set-state": "off",
 		"react/no-find-dom-node": "off",
 		"react/no-is-mounted": "off",
@@ -108,7 +107,6 @@
 		"react/sort-comp": "off",
 		"react/state-in-constructor": "off",
 		"react/static-property-placement": "off",
-
 		"react/boolean-prop-naming": [
 			"error",
 			{
@@ -145,7 +143,6 @@
 		"react/jsx-no-constructed-context-values": "error",
 		"react/jsx-no-script-url": "error",
 		"react/jsx-no-useless-fragment": "error",
-
 		"unicorn/filename-case": [
 			"error",
 			{
