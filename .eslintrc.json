@@ -6,7 +6,7 @@
 		"es2021": true
 	},
 	"parser": "@typescript-eslint/parser",
-	"plugins": ["react-prefer-function-component"],
+	"plugins": [],
 	"extends": [
 		"eslint:all",
 		"plugin:@typescript-eslint/all",
@@ -19,8 +19,7 @@
 		"airbnb/hooks",
 		"plugin:react/jsx-runtime",
 		"plugin:unicorn/all",
-		"plugin:react-prefer-function-component/recommended",
-		"prettier"
+		"plugin:prettier/recommended"
 	],
 	"rules": {
 		"no-dupe-else-if": "error",
@@ -50,25 +49,17 @@
 			}
 		],
 		"no-void": "off",
-
 		"@typescript-eslint/padding-line-between-statements": "off",
 		"@typescript-eslint/prefer-enum-initializers": "off",
 		"@typescript-eslint/prefer-readonly-parameter-types": "off",
 		"@typescript-eslint/prefer-regexp-exec": "off",
-		"@typescript-eslint/no-magic-numbers": [
-			"error",
-			{
-				"ignoreEnums": true,
-				"ignore": [0],
-				"enforceConst": true,
-				"detectObjects": true
-			}
-		],
 		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"@typescript-eslint/init-declarations": "off",
 		"@typescript-eslint/no-confusing-void-expression": [
 			"error",
-			{ "ignoreArrowShorthand": true }
+			{
+				"ignoreArrowShorthand": true
+			}
 		],
 		"@typescript-eslint/non-nullable-type-assertion-style": "off",
 		"@typescript-eslint/strict-boolean-expressions": "off",
@@ -76,7 +67,6 @@
 		"@typescript-eslint/member-ordering": "off",
 		"@typescript-eslint/prefer-includes": "off",
 		"@typescript-eslint/no-restricted-imports": "off",
-
 		"import/no-deprecated": "error",
 		"import/order": "off",
 		"import/no-extraneous-dependencies": [
@@ -92,7 +82,6 @@
 				]
 			}
 		],
-
 		"react/no-did-update-set-state": "off",
 		"react/no-find-dom-node": "off",
 		"react/no-is-mounted": "off",
@@ -108,7 +97,6 @@
 		"react/sort-comp": "off",
 		"react/state-in-constructor": "off",
 		"react/static-property-placement": "off",
-
 		"react/boolean-prop-naming": [
 			"error",
 			{
@@ -122,15 +110,6 @@
 			}
 		],
 		"react/no-unstable-nested-components": "error",
-		"react/jsx-handler-names": [
-			"error",
-			{
-				"eventHandlerPrefix": "on",
-				"eventHandlerPropPrefix": "on",
-				"checkLocalVariables": true,
-				"checkInlineFunction": true
-			}
-		],
 		"react/jsx-key": "error",
 		"react/jsx-no-bind": [
 			"error",
@@ -145,7 +124,6 @@
 		"react/jsx-no-constructed-context-values": "error",
 		"react/jsx-no-script-url": "error",
 		"react/jsx-no-useless-fragment": "error",
-
 		"unicorn/filename-case": [
 			"error",
 			{
@@ -155,7 +133,29 @@
 				}
 			}
 		],
-		"unicorn/no-nested-ternary": ["error"]
+		"unicorn/no-nested-ternary": ["error"],
+		//
+		"import/prefer-default-export": "off",
+		"react/prop-types": "off",
+		"react/require-default-props": [
+			"error",
+			{
+				"functions": "defaultArguments"
+			}
+		],
+		"unicorn/no-null": "off",
+		"unicorn/no-keyword-prefix": "off",
+		"unicorn/prevent-abbreviations": "off",
+		"@typescript-eslint/no-magic-numbers": "off",
+		"@typescript-eslint/explicit-function-return-type": "off",
+		"@typescript-eslint/consistent-type-definitions": ["error", "type"],
+		// Avoid conflict rule between Prettier and Airbnb Eslint
+		"prettier/prettier": [
+			"error",
+			{
+				"endOfLine": "auto"
+			}
+		]
 	},
 	"settings": {
 		"react": {
@@ -179,7 +179,6 @@
 			"files": ["**/__tests__/**/*.ts?(x)"],
 			"extends": ["plugin:testing-library/react"],
 			"rules": {
-				"@typescript-eslint/no-magic-numbers": ["off"],
 				"testing-library/no-await-sync-events": [
 					"error",
 					{
