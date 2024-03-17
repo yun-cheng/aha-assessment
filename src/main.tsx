@@ -1,7 +1,9 @@
+import { ThemeProvider } from '@mui/material'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import App from 'App'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import theme from 'utils/muiThemeConfig'
 import { registerSW } from 'virtual:pwa-register'
 import './index.css'
 
@@ -22,9 +24,11 @@ if (container) {
 	const root = createRoot(container)
 	root.render(
 		<StrictMode>
-			<QueryClientProvider client={queryClient}>
-				<App />
-			</QueryClientProvider>
+			<ThemeProvider theme={theme}>
+				<QueryClientProvider client={queryClient}>
+					<App />
+				</QueryClientProvider>
+			</ThemeProvider>
 		</StrictMode>
 	)
 }
