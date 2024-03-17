@@ -6,7 +6,7 @@
 		"es2021": true
 	},
 	"parser": "@typescript-eslint/parser",
-	"plugins": ["react-prefer-function-component"],
+	"plugins": [],
 	"extends": [
 		"eslint:all",
 		"plugin:@typescript-eslint/all",
@@ -19,7 +19,6 @@
 		"airbnb/hooks",
 		"plugin:react/jsx-runtime",
 		"plugin:unicorn/all",
-		"plugin:react-prefer-function-component/recommended",
 		"prettier"
 	],
 	"rules": {
@@ -54,15 +53,6 @@
 		"@typescript-eslint/prefer-enum-initializers": "off",
 		"@typescript-eslint/prefer-readonly-parameter-types": "off",
 		"@typescript-eslint/prefer-regexp-exec": "off",
-		"@typescript-eslint/no-magic-numbers": [
-			"error",
-			{
-				"ignoreEnums": true,
-				"ignore": [0],
-				"enforceConst": true,
-				"detectObjects": true
-			}
-		],
 		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"@typescript-eslint/init-declarations": "off",
 		"@typescript-eslint/no-confusing-void-expression": [
@@ -120,15 +110,6 @@
 			}
 		],
 		"react/no-unstable-nested-components": "error",
-		"react/jsx-handler-names": [
-			"error",
-			{
-				"eventHandlerPrefix": "on",
-				"eventHandlerPropPrefix": "on",
-				"checkLocalVariables": true,
-				"checkInlineFunction": true
-			}
-		],
 		"react/jsx-key": "error",
 		"react/jsx-no-bind": [
 			"error",
@@ -152,7 +133,16 @@
 				}
 			}
 		],
-		"unicorn/no-nested-ternary": ["error"]
+		"unicorn/no-nested-ternary": ["error"],
+		//
+		"import/prefer-default-export": "off",
+		"react/prop-types": "off",
+		"unicorn/no-null": "off",
+		"unicorn/no-keyword-prefix": "off",
+		"unicorn/prevent-abbreviations": "off",
+		"@typescript-eslint/no-magic-numbers": "off",
+		"@typescript-eslint/explicit-function-return-type": "off",
+		"@typescript-eslint/consistent-type-definitions": ["error", "type"]
 	},
 	"settings": {
 		"react": {
@@ -176,7 +166,6 @@
 			"files": ["**/__tests__/**/*.ts?(x)"],
 			"extends": ["plugin:testing-library/react"],
 			"rules": {
-				"@typescript-eslint/no-magic-numbers": ["off"],
 				"testing-library/no-await-sync-events": [
 					"error",
 					{
