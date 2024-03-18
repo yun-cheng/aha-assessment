@@ -1,3 +1,9 @@
+@import url('@fontsource/ubuntu/300.css');
+@import url('@fontsource/ubuntu/400.css');
+@import url('@fontsource/ubuntu/500.css');
+@import url('@fontsource/ubuntu/700.css');
+@import url('@fontsource-variable/open-sans');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

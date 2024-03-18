@@ -1,16 +1,16 @@
-import LoadingOrError from 'components/LoadingOrError'
 import type { ReactElement } from 'react'
-import { Suspense } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+
+const router = createBrowserRouter([
+	{
+		path: '/',
+		lazy: async () => {
+			const HomePage = await import('pages/HomePage')
+			return { Component: HomePage.default }
+		}
+	}
+])
 
 export default function App(): ReactElement {
-	return (
-		<BrowserRouter>
-			<Suspense fallback={<LoadingOrError />}>
-				<Routes>
-					<Route path='/' />
-				</Routes>
-			</Suspense>
-		</BrowserRouter>
-	)
+	return <RouterProvider router={router} />
 }

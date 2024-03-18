@@ -14,6 +14,12 @@ dependencies:
   '@emotion/styled':
     specifier: ^11.11.0
     version: 11.11.0(@emotion/react@11.11.4)(@types/react@18.2.46)(react@18.2.0)
+  '@fontsource-variable/open-sans':
+    specifier: ^5.0.28
+    version: 5.0.28
+  '@fontsource/ubuntu':
+    specifier: ^5.0.12
+    version: 5.0.12
   '@mui/material':
     specifier: ^5.15.13
     version: 5.15.13(@emotion/react@11.11.4)(@emotion/styled@11.11.0)(@types/react@18.2.46)(react-dom@18.2.0)(react@18.2.0)
@@ -2598,6 +2604,20 @@ packages:
     resolution:
       {
         integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==
+      }
+    dev: false
+
+  /@fontsource-variable/open-sans@5.0.28:
+    resolution:
+      {
+        integrity: sha512-PYfH6e+Jm8N5DRRAEOGneQx3ObnyNgAJ9WTbw7w84tSEmvk+ypo1kUslF2WGkgaygU2uN7wwAAPVnO7YYpipzg==
+      }
+    dev: false
+
+  /@fontsource/ubuntu@5.0.12:
+    resolution:
+      {
+        integrity: sha512-VWZpU1sU49XrqPBADUQrELaKxh3eW0rOqWeCIo3X9Gc7hzHE25OMFLlJttgCCFIkcn3WbjskIyr/Wm6bs1lASg==
       }
     dev: false
 
