@@ -6,7 +6,7 @@ const config = {
 	content: ['index.html', 'src/**/*.tsx'],
 	theme: {
 		fontFamily: {
-			sans: [...defaultConfig.theme.fontFamily.sans]
+			sans: ['Ubuntu', ...defaultConfig.theme.fontFamily.sans]
 		}
 	},
 	experimental: { optimizeUniversalDefaults: true },
