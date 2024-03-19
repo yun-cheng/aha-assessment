@@ -3,11 +3,19 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 const router = createBrowserRouter([
 	{
-		path: '/',
 		lazy: async () => {
-			const HomePage = await import('pages/HomePage')
-			return { Component: HomePage.default }
-		}
+			const FollowSectionLayout = await import('pages/FollowSectionLayout')
+			return { Component: FollowSectionLayout.default }
+		},
+		children: [
+			{
+				path: '/',
+				lazy: async () => {
+					const HomePage = await import('pages/HomePage')
+					return { Component: HomePage.default }
+				}
+			}
+		]
 	}
 ])
 
