@@ -1,9 +1,13 @@
 import type { ReactElement } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import cn from 'utils/cn'
+import ArrowBackSvg from '../../../icons/arrowBack.svg?react'
 import Logo from '../Logo'
 import NavButton from './NavButton'
 
 export default function NavBar(): ReactElement {
+	const { pathname } = useLocation()
+
 	return (
 		<>
 			<div
@@ -12,32 +16,48 @@ export default function NavBar(): ReactElement {
 					'flex items-center bg-background'
 				)}
 			>
-				<Logo className='ml-[21px]' />
+				{pathname === '/' && <Logo className='ml-[21px]' />}
+				{pathname !== '/' && (
+					<Link
+						className='flex translate-y-[1px] items-center pl-[24.5px]'
+						to='/'
+					>
+						<ArrowBackSvg />
+						<div className='ml-[19.88px] text-2xl/normal'>Home Page</div>
+					</Link>
+				)}
 			</div>
 			<div className='hidden min-w-20 bg-[#1b1b1b] sm:block'>
 				<div className='ml-[1px] mt-[37px] flex justify-center'>
 					<Logo />
 				</div>
-				<NavButton className='ml-[2px] mt-[43px]' to='/' name='Home' isActive />
+				<NavButton
+					className='ml-[2px] mt-[43px]'
+					to='/'
+					name='Home'
+					isActive={pathname === '/'}
+				/>
 				<NavButton
 					className='ml-[2px] mt-[22px]'
 					to='/tags'
 					name='Tags'
-					isActive={false}
+					isActive={pathname === '/tags'}
 					hasNotification
 				/>
 			</div>
-			<div
-				className={cn(
-					'fixed bottom-0 h-[66px] w-full sm:hidden',
-					'bg-background/20 shadow-[inset_0_0.5px_0_0_rgba(0,0,0,0.8)] backdrop-blur-[27.1828px]'
-				)}
-			>
-				<div className='flex h-full items-center justify-center'>
-					<NavButton className='' to='/' isActive />
-					<NavButton className='ml-[50px]' to='/tags' isActive={false} />
+			{pathname === '/' && (
+				<div
+					className={cn(
+						'fixed bottom-0 h-[66px] w-full sm:hidden',
+						'bg-background/20 shadow-[inset_0_0.5px_0_0_rgba(0,0,0,0.8)] backdrop-blur-[27.1828px]'
+					)}
+				>
+					<div className='flex h-full items-center justify-center'>
+						<NavButton className='' to='/' isActive />
+						<NavButton className='ml-[50px]' to='/tags' isActive={false} />
+					</div>
 				</div>
-			</div>
+			)}
 		</>
 	)
 }
