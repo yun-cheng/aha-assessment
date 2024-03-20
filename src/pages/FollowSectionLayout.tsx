@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 
 export default function FollowSectionLayout(): ReactElement {
 	return (
-		<div className='flex'>
+		<div className='flex w-full'>
 			<div className='grow'>
 				<Outlet />
 			</div>
