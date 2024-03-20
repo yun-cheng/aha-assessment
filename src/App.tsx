@@ -20,6 +20,13 @@ const router = createBrowserRouter([
 						}
 					}
 				]
+			},
+			{
+				path: '/tags',
+				lazy: async () => {
+					const TagsPage = await import('pages/TagsPage')
+					return { Component: TagsPage.default }
+				}
 			}
 		]
 	}
