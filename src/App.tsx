@@ -18,6 +18,13 @@ const router = createBrowserRouter([
 							const HomePage = await import('pages/HomePage')
 							return { Component: HomePage.default }
 						}
+					},
+					{
+						path: '/results',
+						lazy: async () => {
+							const ResultsPage = await import('pages/ResultsPage')
+							return { Component: ResultsPage.default }
+						}
 					}
 				]
 			},

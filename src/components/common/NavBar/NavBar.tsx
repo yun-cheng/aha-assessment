@@ -35,7 +35,7 @@ export default function NavBar(): ReactElement {
 					className='ml-[2px] mt-[43px]'
 					to='/'
 					name='Home'
-					isActive={pathname === '/'}
+					isActive={['/', '/results'].includes(pathname)}
 				/>
 				<NavButton
 					className='ml-[2px] mt-[22px]'
