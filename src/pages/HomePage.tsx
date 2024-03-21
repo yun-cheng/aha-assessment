@@ -1,11 +1,15 @@
+import { resultPageSizeAtom } from 'atoms/core'
 import Divider from 'components/common/Divider'
 import Input from 'components/common/Input'
 import LargeButton from 'components/common/LargeButton'
 import PageSizeSlider from 'components/search/PageSizeSlider'
+import { useAtom } from 'jotai'
 import type { ReactElement } from 'react'
 import cn from 'utils/cn'
 
 export default function HomePage(): ReactElement {
+	const [pageSize] = useAtom(resultPageSizeAtom)
+
 	return (
 		<div className='mx-auto h-screen max-w-[805px]'>
 			<div
@@ -20,7 +24,7 @@ export default function HomePage(): ReactElement {
 					<Divider className='mt-[30px] hidden sm:block' />
 					<h2 className='mt-[30px] text-2xl/normal'># Of Results Per Page</h2>
 					<div className='mt-4 flex h-[50px] sm:mt-5'>
-						<div className='text-5xl font-bold'>30</div>
+						<div className='text-5xl font-bold'>{pageSize}</div>
 						<div className='ml-[10px] mt-[22px] tracking-15'>results</div>
 					</div>
 					<div className='mt-[5px]'>
