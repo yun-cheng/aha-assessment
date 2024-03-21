@@ -1,4 +1,6 @@
-import type { ReactElement } from 'react'
+import { hasTagsNotificationAtom } from 'atoms/core'
+import { useAtom } from 'jotai'
+import { useEffect, type ReactElement } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import cn from 'utils/cn'
 import ArrowBackSvg from '../../../icons/arrowBack.svg?react'
@@ -7,6 +9,16 @@ import NavButton from './NavButton'
 
 export default function NavBar(): ReactElement {
 	const { pathname } = useLocation()
+
+	const [hasTagsNotification, setHasTagsNotification] = useAtom(
+		hasTagsNotificationAtom
+	)
+
+	useEffect(() => {
+		if (pathname === '/tags') {
+			setHasTagsNotification(false)
+		}
+	}, [pathname, setHasTagsNotification])
 
 	return (
 		<>
@@ -42,7 +54,7 @@ export default function NavBar(): ReactElement {
 					to='/tags'
 					name='Tags'
 					isActive={pathname === '/tags'}
-					hasNotification
+					hasNotification={hasTagsNotification}
 				/>
 			</div>
 			{pathname === '/' && (
