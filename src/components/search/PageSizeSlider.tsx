@@ -1,5 +1,7 @@
+import { resultPageSizeAtom } from 'atoms/core'
 import Slider from 'components/common/Slider/Slider'
-import type { ReactElement } from 'react'
+import { useAtom } from 'jotai'
+import { useState, type ReactElement } from 'react'
 
 const MARKS = [
 	{
@@ -29,7 +31,25 @@ const MARKS = [
 ]
 
 export default function PageSizeSlider(): ReactElement {
+	const [pageSize, setPageSize] = useAtom(resultPageSizeAtom)
+
+	const [markValue, setMarkValue] = useState(
+		() => MARKS.find(e => e.label === pageSize.toString())?.value ?? 4
+	)
+
+	const onMarkChange = ({ value, label }: { value: number; label: string }) => {
+		setMarkValue(value)
+		setPageSize(Number(label))
+	}
+
 	return (
-		<Slider defaultValue={4} min={0} max={5.32} step={null} marks={MARKS} />
+		<Slider
+			value={markValue}
+			min={0}
+			max={5.32}
+			step={null}
+			marks={MARKS}
+			onMarkChange={onMarkChange}
+		/>
 	)
 }

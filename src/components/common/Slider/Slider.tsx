@@ -19,6 +19,7 @@ export default function Slider({
 	step,
 	labelStep = 1,
 	defaultValue = undefined,
+	value = undefined,
 	marks = undefined,
 	onChange = undefined,
 	onMarkChange = undefined,
@@ -29,20 +30,22 @@ export default function Slider({
 	}, [min, max, step, labelStep, marks])
 
 	const [markIndex, setMarkIndex] = useState(() => {
-		if (!defaultValue) return 0
-		return valueMarks.findIndex(e => e.value === (defaultValue as number))
+		if (!defaultValue && !value) return 0
+		return valueMarks.findIndex(e =>
+			[defaultValue as number, value as number].includes(e.value)
+		)
 	})
 
 	const handleChange: ComponentProps<typeof Slider>['onChange'] = (
 		event,
-		value,
+		newValue,
 		activeThumb
 	) => {
-		const index = valueMarks.findIndex(e => e.value === (value as number))
+		const index = valueMarks.findIndex(e => e.value === (newValue as number))
 		setMarkIndex(index)
 
 		if (onChange) {
-			onChange(event, value, activeThumb)
+			onChange(event, newValue, activeThumb)
 		}
 		if (onMarkChange && index !== -1) {
 			onMarkChange(valueMarks[index])
@@ -73,6 +76,7 @@ export default function Slider({
 			max={max}
 			step={step}
 			defaultValue={defaultValue}
+			value={value}
 			marks={valueMarks}
 			onChange={handleChange}
 			// eslint-disable-next-line react/jsx-props-no-spreading
