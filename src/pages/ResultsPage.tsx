@@ -1,14 +1,30 @@
-import LargeButton from 'components/common/LargeButton'
 import ResultItem from 'components/result/ResultItem'
-import type { ReactElement } from 'react'
+import useFetchResults from 'hooks/useFetchResults'
+import { useEffect, useRef, type ReactElement } from 'react'
+import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom'
 import cn from 'utils/cn'
 import ArrowBackSvg from '../icons/arrowBack.svg?react'
 
 export default function ResultsPage(): ReactElement {
+	const containerRef = useRef<HTMLDivElement>(null)
+
+	const { ref, inView } = useInView({
+		root: containerRef.current,
+		rootMargin: '0px 0px 250px'
+	})
+
+	const { data, isFetching, fetchNextPage } = useFetchResults()
+
+	useEffect(() => {
+		if (inView) {
+			void fetchNextPage()
+		}
+	}, [fetchNextPage, inView])
+
 	return (
 		<div className={cn('h-screen px-[7px] sm:px-[14px]', 'flex flex-col')}>
-			<div className='mt-[70px] overflow-y-auto sm:mt-0'>
+			<div ref={containerRef} className='mt-[70px] overflow-y-auto sm:mt-0'>
 				<div className='mx-auto max-w-[814px]'>
 					<div
 						className={cn(
@@ -32,22 +48,12 @@ export default function ResultsPage(): ReactElement {
 								Results
 							</h2>
 						</div>
-						{Array.from({ length: 9 }).map((_, index) => (
-							<ResultItem
-								// eslint-disable-next-line react/no-array-index-key
-								key={index}
-								result={{
-									id: index.toString(),
-									name: 'This is a title',
-									username: 'username',
-									avater: 'https://i.imgur.com/DqZcJvD.png',
-									isFollowing: false
-								}}
-							/>
+						{data?.map(result => (
+							<ResultItem key={result.id} result={result} />
 						))}
-						<LargeButton className='col-span-full mb-10'>MORE</LargeButton>
 					</div>
 				</div>
+				<div ref={ref} className={cn('w-full', { hidden: isFetching })} />
 			</div>
 		</div>
 	)
