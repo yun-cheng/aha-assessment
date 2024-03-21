@@ -1,11 +1,12 @@
 import { useQuery } from '@tanstack/react-query'
 import fetchTags from 'api/fetchTags'
 import TagItem from 'components/tag/TagItem'
+import TagItemSkeleton from 'components/tag/TagItemSkeleton'
 import type { ReactElement } from 'react'
 import cn from 'utils/cn'
 
 export default function TagsPage(): ReactElement {
-	const { data: tags } = useQuery({
+	const { data: tags, isFetching } = useQuery({
 		queryKey: ['fetchTags'],
 		queryFn: fetchTags
 	})
@@ -31,6 +32,11 @@ export default function TagsPage(): ReactElement {
 							Tags
 						</h2>
 						{tags?.map(tag => <TagItem key={tag.id} tag={tag} />)}
+						{!!isFetching &&
+							Array.from({ length: 15 }).map((_, index) => (
+								// eslint-disable-next-line react/no-array-index-key
+								<TagItemSkeleton key={index} />
+							))}
 					</div>
 				</div>
 			</div>

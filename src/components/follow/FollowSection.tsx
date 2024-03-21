@@ -6,6 +6,7 @@ import { useEffect, useRef } from 'react'
 import { useInView } from 'react-intersection-observer'
 import cn from 'utils/cn'
 import FollowUserItem from './FollowUserItem'
+import FollowUserItemSkeleton from './FollowUserItemSkeleton'
 
 export default function FollowSection(): ReactElement {
 	const containerRef = useRef<HTMLDivElement>(null)
@@ -46,6 +47,11 @@ export default function FollowSection(): ReactElement {
 				className='w-full overflow-y-auto py-4 pl-4 pr-[9px]'
 			>
 				{data?.map(user => <FollowUserItem key={user.id} user={user} />)}
+				{!isFetching &&
+					Array.from({ length: 10 }).map((_, index) => (
+						// eslint-disable-next-line react/no-array-index-key
+						<FollowUserItemSkeleton key={index} />
+					))}
 				<div ref={ref} className={cn('w-full', { hidden: isFetching })} />
 			</div>
 		</div>
