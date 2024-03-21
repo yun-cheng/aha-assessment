@@ -1,4 +1,5 @@
 import ResultItem from 'components/result/ResultItem'
+import ResultItemSkeleton from 'components/result/ResultItemSkeleton'
 import useFetchResults from 'hooks/useFetchResults'
 import { useEffect, useRef, type ReactElement } from 'react'
 import { useInView } from 'react-intersection-observer'
@@ -51,6 +52,11 @@ export default function ResultsPage(): ReactElement {
 						{data?.map(result => (
 							<ResultItem key={result.id} result={result} />
 						))}
+						{!!isFetching &&
+							Array.from({ length: 9 }).map((_, index) => (
+								// eslint-disable-next-line react/no-array-index-key
+								<ResultItemSkeleton key={index} />
+							))}
 					</div>
 				</div>
 				<div ref={ref} className={cn('w-full', { hidden: isFetching })} />
