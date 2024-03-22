@@ -5,7 +5,7 @@ import { useEffect, useRef, type ReactElement } from 'react'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom'
 import cn from 'utils/cn'
-import ArrowBackSvg from '../icons/arrowBack.svg?react'
+import ArrowBackSvg from '../icons/ArrowBack.svg?react'
 
 export default function ResultsPage(): ReactElement {
 	const containerRef = useRef<HTMLDivElement>(null)
