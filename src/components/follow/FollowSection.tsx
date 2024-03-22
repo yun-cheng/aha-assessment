@@ -47,7 +47,7 @@ export default function FollowSection(): ReactElement {
 				className='w-full overflow-y-auto py-4 pl-4 pr-[9px]'
 			>
 				{data?.map(user => <FollowUserItem key={user.id} user={user} />)}
-				{!isFetching &&
+				{!!isFetching &&
 					Array.from({ length: 10 }).map((_, index) => (
 						// eslint-disable-next-line react/no-array-index-key
 						<FollowUserItemSkeleton key={index} />
