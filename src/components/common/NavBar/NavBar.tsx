@@ -1,7 +1,7 @@
 import { hasTagsNotificationAtom } from 'atoms/core'
 import { useAtom } from 'jotai'
 import { useEffect, type ReactElement } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useSearchParams } from 'react-router-dom'
 import cn from 'utils/cn'
 import ArrowBackSvg from '../../../icons/ArrowBack.svg?react'
 import Logo from '../Logo'
@@ -9,6 +9,7 @@ import NavButton from './NavButton'
 
 export default function NavBar(): ReactElement {
 	const { pathname } = useLocation()
+	const [searchParams] = useSearchParams()
 
 	const [hasTagsNotification, setHasTagsNotification] = useAtom(
 		hasTagsNotificationAtom
@@ -19,6 +20,16 @@ export default function NavBar(): ReactElement {
 			setHasTagsNotification(false)
 		}
 	}, [pathname, setHasTagsNotification])
+
+	useEffect(() => {
+		let title = 'Aha Front-End Assessment'
+		if (pathname === '/tags') {
+			title = `Tags - ${title}`
+		} else if (pathname === '/results') {
+			title = `${searchParams.get('keyword')} - ${title}`
+		}
+		document.title = title
+	}, [pathname, searchParams])
 
 	return (
 		<>
