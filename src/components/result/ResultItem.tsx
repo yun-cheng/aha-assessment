@@ -1,3 +1,4 @@
+import LazyImage from 'components/common/LazyImage'
 import type { ReactElement } from 'react'
 import type { Result } from 'types/result'
 import cn from 'utils/cn'
@@ -11,7 +12,12 @@ export default function ResultItem({
 }: Props): ReactElement {
 	return (
 		<div>
-			<img className='aspect-[1.5] w-full' src={avater} alt='avatar' />
+			<LazyImage
+				className='aspect-[1.5] w-full'
+				rootSelector='#resultsContainer'
+				src={avater}
+				alt='avatar'
+			/>
 			<div
 				className={cn(
 					'mt-[20.33px] sm:mt-3',
