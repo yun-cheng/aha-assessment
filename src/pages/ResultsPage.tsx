@@ -12,7 +12,7 @@ export default function ResultsPage(): ReactElement {
 
 	const { ref, inView } = useInView({
 		root: containerRef.current,
-		rootMargin: '0px 0px 250px'
+		rootMargin: '250px 0px'
 	})
 
 	const { data, isFetching, fetchNextPage } = useFetchResults()
@@ -25,7 +25,11 @@ export default function ResultsPage(): ReactElement {
 
 	return (
 		<div className={cn('h-screen px-[7px] sm:px-[14px]', 'flex flex-col')}>
-			<div ref={containerRef} className='mt-[70px] overflow-y-auto sm:mt-0'>
+			<div
+				id='resultsContainer'
+				ref={containerRef}
+				className='mt-[70px] overflow-y-auto sm:mt-0'
+			>
 				<div className='mx-auto max-w-[814px]'>
 					<div
 						className={cn(
