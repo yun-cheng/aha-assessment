@@ -1,27 +1,26 @@
-# Vitamin
+# Aha Front-End Assessment
 
-Opinionated Vite starter template.
+A showcase website demonstrating front-end development skills for Aha's assessment.
 
-## Before you start coding
+Visit live site: <https://aha-frontend-assessment.web.app/>
 
-- [ ] If you don't plan to use GitHub Actions, delete the `.github` directory.
-- [ ] Clean up the `cypress/e2e/index.spec.ts` file.
-- [ ] Change the `favicon.png`, `apple-touch-icon.png`, `android-chrome-192x192.png` and `android-chrome-512x512.png`. [favicon.io](https://favicon.io) is a cool tool for generating these assets.
-- [ ] In the `src` folder, remove the `__tests__`, `api` and `components` folder and the `types.ts` file.
-- [ ] If you don't plan to use `react-query`, remove the query client logic in the `main.tsx` file.
-- [ ] Change the title, description and theme color in the `index.html` and `vite.config.ts`. The [Inter](https://rsms.me/inter/) font is included, so remove it if you want.
-- [ ] Modify or delete the `LICENSE` file.
-- [ ] Change the `name` field in package.json.
+## Assessment
 
-## Scripts
+This project follows [these instructions](https://rootdomain.notion.site/Candidate-Exam-Front-End-Engineer-ac3dd8a3474542899d49efb894672246) and is built according to [this Figma design](<https://www.figma.com/file/Vuu52JkGcLb3m3uVvF3DA3/Aha-Front-end-Assessment-(clone)?type=design&node-id=0%3A1&mode=design&t=kKtr558af85zwltM-1>) to complete the assessment tasks.
 
-- `pnpm dev` - start a development server with hot reload.
-- `pnpm build` - build for production. The generated files will be on the `dist` folder.
-- `pnpm preview` - locally preview the production build.
-- `pnpm test` - run unit and integration tests related to changed files based on git.
-- `pnpm test:ci` - run all unit and integration tests in CI mode.
-- `pnpm test:e2e` - run all e2e tests with the Cypress Test Runner.
-- `pnpm test:e2e:headless` - run all e2e tests headlessly.
-- `pnpm format` - format all files with Prettier.
-- `pnpm lint` - runs TypeScript, ESLint and Stylelint.
-- `pnpm validate` - runs `lint`, `test:ci` and `test:e2e:ci`.
+For a detailed side-by-side comparison of the design and implementation, [click here](<https://www.figma.com/file/Vuu52JkGcLb3m3uVvF3DA3/Aha-Front-end-Assessment-(clone)?type=design&node-id=25101%3A309&mode=design&t=mfH6vNOlPhpAZRO1-1>).
+
+## Tech Stack
+
+- Build with [React](https://react.dev/) and [TypeScript](https://www.typescriptlang.org/).
+- Adopt the [Vitamin](https://github.com/wtchnm/Vitamin) template, which utilizes [Vite](https://vitejs.dev/) as a build tool and incorporates best practices for React projects.
+- Ensure code consistency and formatting with [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/), and integrate them into the workflow via [Husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged).
+- Utilize [TanStack Query](https://tanstack.com/query) for efficient data fetching, caching, and synchronization.
+- Use [React Router](https://reactrouter.com/) for code-splitting and lazy-loaded routes.
+- Style using the atomic approach with [Tailwind CSS](https://tailwindcss.com/), alongside [clsx](https://github.com/lukeed/clsx) and [tailwind-merge](https://github.com/dcastil/tailwind-merge), to prevent style conflicts and enhance readability.
+- Leverate [Material UI](https://mui.com/material-ui/) for ready-to-use components.
+- Automate deployment to [Firebase Hosting](https://firebase.google.com/docs/hosting) through [GitHub Actions](https://docs.github.com/en/actions) for continuous integration.
+- Adopt an atomic approach to state management with [Jotai](https://jotai.org/).
+- Generate realistic images and avatars with [Faker](https://fakerjs.dev/).
+- Use [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer) to achieve infinite loading and lazy load images.
+- Implement self-hosted fonts using [Fontsource](https://fontsource.org/).
