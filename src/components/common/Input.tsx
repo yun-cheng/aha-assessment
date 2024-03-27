@@ -12,8 +12,8 @@ function Input(
 			ref={ref}
 			className={cn(
 				'h-[60px] w-full',
-				'rounded-md border-[3px] border-white/50 bg-transparent pl-[15px] focus:border-[#ff9b33] focus:ring-0',
-				'text-sm/normal tracking-25',
+				'rounded-md border-[3px] border-white/50 bg-transparent pl-[15px] pt-[9px] focus:border-[#ff9b33] focus:ring-0',
+				'text-sm/normal tracking-25 placeholder:text-white/30',
 				className
 			)}
 			// eslint-disable-next-line react/jsx-props-no-spreading

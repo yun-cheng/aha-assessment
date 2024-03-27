@@ -33,22 +33,24 @@ export default function HomePage(): ReactElement {
 				)}
 			>
 				<div className='grow'>
-					<h2 className='text-2xl/normal'>Search</h2>
+					<h2 className='translate-y-px text-2xl/normal'>Search</h2>
 					<Input
 						ref={inputRef}
 						className='mt-4 sm:mt-5'
 						placeholder='Keyword'
 					/>
-					<Divider className='mt-[30px] hidden sm:block' />
-					<h2 className='mt-[30px] text-2xl/normal'># Of Results Per Page</h2>
+					<Divider className='mt-[29px] hidden sm:block' />
+					<h2 className='mt-[29px] text-2xl/normal sm:mt-[31px]'>
+						# Of Results Per Page
+					</h2>
 					<div className='mt-4 flex h-[50px] sm:mt-5'>
 						<div className='text-5xl font-bold'>{pageSize}</div>
-						<div className='ml-[10px] mt-[22px] tracking-15'>results</div>
+						<div className='ml-2.5 mt-[21px] tracking-15'>results</div>
 					</div>
-					<div className='mt-[5px]'>
+					<div className='mt-[5px] sm:mt-3'>
 						<PageSizeSlider />
 					</div>
-					<Divider className='mt-[21px] hidden sm:block' />
+					<Divider className='mt-[28px] hidden sm:block' />
 				</div>
 				<div
 					className={cn(

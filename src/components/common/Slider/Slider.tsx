@@ -5,6 +5,7 @@ import {
 	type ComponentProps,
 	type ReactElement
 } from 'react'
+import cn from 'utils/cn'
 import generateMarks from './generateMarks'
 
 type Props = Omit<ComponentProps<typeof MuiSlider>, 'marks'> & {
@@ -67,7 +68,10 @@ export default function Slider({
 				track: 'bg-gradient-to-r from-[#ff5c01] to-[#ffd25f] border-none',
 				rail: 'bg-white/30',
 				mark: 'hidden',
-				markLabel: 'mt-1 text-sm/normal tracking-25',
+				markLabel: cn(
+					'mt-[3px] sm:mt-[5px]',
+					'text-sm/normal tracking-25 sm:text-[16px] sm:font-medium sm:tracking-15'
+				),
 				thumb:
 					'h-[26px] w-[26px] border-[6px] border-[#ffd05d] bg-[#1b1b1b] ring-0 before:ring-0 hover:ring-0'
 			}}
@@ -84,3 +88,11 @@ export default function Slider({
 		/>
 	)
 }
+
+// font-weight: 500;
+// font-size: 16px;
+// letter-spacing: 0.15px;
+
+// font-weight: 400;
+// font-size: 14px;
+// letter-spacing: 0.25px;
