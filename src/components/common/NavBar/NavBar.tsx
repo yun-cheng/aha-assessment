@@ -41,27 +41,24 @@ export default function NavBar(): ReactElement {
 			>
 				{pathname === '/' && <Logo className='ml-[21px]' />}
 				{pathname !== '/' && (
-					<Link
-						className='flex translate-y-[1px] items-center pl-[24.5px]'
-						to='/'
-					>
+					<Link className='flex translate-y-px items-center pl-[24.5px]' to='/'>
 						<ArrowBackSvg />
 						<div className='ml-[19.88px] text-2xl/normal'>Home Page</div>
 					</Link>
 				)}
 			</div>
 			<div className='hidden min-w-20 bg-[#1b1b1b] sm:block'>
-				<div className='ml-[1px] mt-[37px] flex justify-center'>
+				<div className='ml-px mt-[37px] flex justify-center'>
 					<Logo />
 				</div>
 				<NavButton
-					className='ml-[2px] mt-[43px]'
+					className='ml-0.5 mt-[43px]'
 					to='/'
 					name='Home'
 					isActive={['/', '/results'].includes(pathname)}
 				/>
 				<NavButton
-					className='ml-[2px] mt-[22px]'
+					className='ml-0.5 mt-[22px]'
 					to='/tags'
 					name='Tags'
 					isActive={pathname === '/tags'}
