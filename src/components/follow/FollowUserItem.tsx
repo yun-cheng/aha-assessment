@@ -1,6 +1,7 @@
 import SmallButton from 'components/common/SmallButton'
 import type { ReactElement } from 'react'
 import type { FollowUser } from 'types/follow'
+import cn from 'utils/cn'
 
 type Props = {
 	user: FollowUser
@@ -18,7 +19,12 @@ export default function FollowUserItem({
 			/>
 			<div className='mx-[15px] grow'>
 				<span className='truncate tracking-15'>{name}</span>
-				<span className='block truncate text-sm/normal tracking-25 text-white/50'>
+				<span
+					className={cn(
+						'block translate-y-px',
+						'truncate text-sm/normal tracking-25 text-white/50'
+					)}
+				>
 					{`@${username}`}
 				</span>
 			</div>

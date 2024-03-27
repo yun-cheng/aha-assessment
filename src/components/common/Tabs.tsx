@@ -15,7 +15,7 @@ export default function Tabs({
 }: Props): ReactElement {
 	return (
 		<div className={cn('relative', className)}>
-			<div className='absolute bottom-0 h-[2px] w-full bg-[#1f1f1f]' />
+			<div className='absolute bottom-0 h-0.5 w-full bg-[#1f1f1f]' />
 			<MuiTabs
 				className='min-h-0'
 				classes={{
