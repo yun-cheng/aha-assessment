@@ -29,7 +29,7 @@ export default function NavButton({
 			>
 				<PagesSvg />
 				{!!hasNotification && (
-					<div className='absolute -right-1 -top-1 h-1.5 w-1.5 rounded-full bg-[#00d1ff]' />
+					<div className='absolute -right-[3px] -top-[3px] h-[5px] w-[5px] rounded-full bg-[#00d1ff]' />
 				)}
 			</div>
 			{!!isActive && !!name && (

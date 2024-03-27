@@ -46,8 +46,8 @@ export default function ResultsPage(): ReactElement {
 							</Link>
 							<h2
 								className={cn(
-									'translate-y-[1px]',
-									'text-2xl/normal sm:pl-[7px] sm:text-[30px] sm:tracking-25'
+									'translate-y-px sm:pl-[7px]',
+									'text-2xl/normal sm:text-[30px] sm:tracking-25'
 								)}
 							>
 								Results

@@ -14,7 +14,7 @@ export default function SmallButton({
 	return (
 		<button
 			className={cn(
-				'max-h-fit rounded-[20px] border border-white px-[10px] py-[5px]',
+				'rounded-[20px] border border-white px-2.5 py-[5px]',
 				'font-["Open_Sans_Variable"] text-xs/normal font-semibold',
 				variant === 'contained'
 					? 'h-[28px] bg-white text-near-black hover:bg-near-black hover:text-white'

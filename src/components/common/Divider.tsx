@@ -8,5 +8,5 @@ type Props = {
 export default function Divider({
 	className = undefined
 }: Props): ReactElement {
-	return <div className={cn('h-[1px] w-full bg-white/10', className)} />
+	return <div className={cn('h-px w-full bg-white/10', className)} />
 }
