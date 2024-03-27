@@ -25,7 +25,7 @@ export default function TagsPage(): ReactElement {
 					>
 						<h2
 							className={cn(
-								'col-span-full -ml-[5px] translate-y-[1px] sm:-mb-3 sm:ml-0',
+								'col-span-full -ml-[5px] translate-y-px sm:-mb-3 sm:ml-0',
 								'text-2xl leading-normal tracking-25 sm:text-[30px]'
 							)}
 						>
