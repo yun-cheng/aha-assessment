@@ -88,11 +88,3 @@ export default function Slider({
 		/>
 	)
 }
-
-// font-weight: 500;
-// font-size: 16px;
-// letter-spacing: 0.15px;
-
-// font-weight: 400;
-// font-size: 14px;
-// letter-spacing: 0.25px;
